@@ -1,0 +1,10 @@
+- hosts: all
+  roles:
+    - nginx
+  remote_user: root
+  handlers:
+    - name: restart nginx
+      service:
+        name: nginx
+        state: restarted
+        enabled: true
